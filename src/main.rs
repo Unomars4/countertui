@@ -18,8 +18,9 @@ fn main() -> color_eyre::Result<()> {
 /// The main application which holds the state and logic of the application.
 #[derive(Debug, Default)]
 pub struct App {
-    /// Is the application running?
+    // Counter value
     counter: u8,
+    /// Is the application running?
     running: bool,
 }
 
