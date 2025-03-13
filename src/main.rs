@@ -91,7 +91,7 @@ impl App {
 
 impl Widget for &App {
     fn render(self, area: Rect, buf: &mut Buffer) {
-        let title = Line::from(" CounterTui 🐭".bold());
+        let title = Line::from(" CounterTui 🐭 ".bold());
         let instructions = Line::from(vec![
             " Decrement ".into(),
             "<Left>".blue().bold(),
