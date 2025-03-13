@@ -71,7 +71,9 @@ impl App {
     }
 
     fn decrement_counter(&mut self) {
-        self.counter -= 1;
+        if self.counter > 1 {
+            self.counter -= 1;
+        }
     }
 
     /// Set running to false to quit the application.
