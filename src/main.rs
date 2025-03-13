@@ -1,9 +1,15 @@
-use color_eyre::Result;
-use crossterm::event::{self, Event, KeyCode, KeyEvent, KeyEventKind, KeyModifiers};
+use std::vec;
+
+use color_eyre::{owo_colors::OwoColorize, Result};
+use crossterm::{
+    event::{self, Event, KeyCode, KeyEvent, KeyEventKind, KeyModifiers},
+    style::Stylize,
+};
 use ratatui::{
     style::Stylize,
-    text::Line,
-    widgets::{Block, Paragraph},
+    symbols::border,
+    text::{Line, Text},
+    widgets::{canvas::Line, Block, Paragraph, Widget},
     DefaultTerminal, Frame,
 };
 
@@ -73,5 +79,37 @@ impl App {
     /// Set running to false to quit the application.
     fn quit(&mut self) {
         self.running = false;
+    }
+}
+
+impl Widget for &App {
+    fn render(self, area: ratatui::prelude::Rect, buf: &mut ratatui::prelude::Buffer)
+    where
+        Self: Sized,
+    {
+        let title = Line::from(" CounterTui 🐭".bold());
+        let instructions = Line::from(vec![
+            " Decrement ".into(),
+            "<Left>".blue().bold(),
+            " Increment ".into(),
+            "<Right>".blue().bold(),
+            " Quit ".into(),
+            "<Q>".blue().bold(),
+        ]);
+
+        let block = Block::bordered()
+            .title(title.centered())
+            .title_bottom(instructions.centered())
+            .border_set(border::THICK);
+
+        let counter_text = Text::from(vec![Line::from(vec![
+            "Value: ".into(),
+            self.counter.to_string().yellow(),
+        ])]);
+
+        Paragraph::new(counter_text)
+            .centered()
+            .block(block)
+            .render(area, buf);
     }
 }
