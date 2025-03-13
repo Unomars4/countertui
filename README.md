@@ -1,3 +1,5 @@
+![alt text](https://github.com/Unomars4/countertui/assets/countertui.jpg?raw=true)
+
 # Countertui
 
 A small terminal user interface counter application built with 🦀 and ratatui.
