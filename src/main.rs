@@ -1,10 +1,6 @@
 use std::vec;
 
-use color_eyre::Result;
-use crossterm::{
-    event::{self, Event, KeyCode, KeyEvent, KeyEventKind, KeyModifiers},
-    style::Stylize,
-};
+use crossterm::event::{self, Event, KeyCode, KeyEvent, KeyEventKind, KeyModifiers};
 use ratatui::{
     symbols::border,
     text::{Line, Text},
