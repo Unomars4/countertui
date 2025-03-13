@@ -126,15 +126,15 @@ mod tests {
     #[test]
     fn render() {
         let app = App::default();
-        let mut buf = Buffer::empty(Rect::new(0, 0, 50, 4));
+        let mut buf = Buffer::empty(Rect::new(0, 0, 52, 4));
 
         app.render(buf.area, &mut buf);
 
         let mut expected = Buffer::with_lines(vec![
-            "┏━━━━━━━━━━━━━ CounterTui 🐭 ━━━━━━━━━━━━━━━━━━━━┓",
-            "┃                  Value: 0                      ┃",
-            "┃                                                ┃",
-            "┗━ Decrement <Left> Increment <Right> Quit <Q> ━━┛",
+            "┏━━━━━━━━━━━━━━━━ CounterTui 🐭 ━━━━━━━━━━━━━━━━━━━━┓",
+            "┃                  Value: 0                         ┃",
+            "┃                                                   ┃",
+            "┗━ Decrement <Left> Increment <Right> Quit <Q> ━━━━━┛",
         ]);
         let title_style = Style::new().bold();
         let counter_style = Style::new().yellow();
