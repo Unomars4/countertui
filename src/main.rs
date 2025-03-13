@@ -131,8 +131,8 @@ mod tests {
         app.render(buf.area, &mut buf);
 
         let mut expected = Buffer::with_lines(vec![
-            "┏━━━━━━━━━━━━━ Counter App Tutorial ━━━━━━━━━━━━━┓",
-            "┃                    Value: 0                    ┃",
+            "┏━━━━━━━━━━━━━ CounterTui 🐭 ━━━━━━━━━━━━━━━━━━━━┓",
+            "┃                  Value: 0                      ┃",
             "┃                                                ┃",
             "┗━ Decrement <Left> Increment <Right> Quit <Q> ━━┛",
         ]);
