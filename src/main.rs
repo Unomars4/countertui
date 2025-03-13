@@ -40,14 +40,6 @@ impl App {
         Ok(())
     }
 
-    /// Renders the user interface.
-    ///
-    /// This is where you add new widgets. See the following resources for more information:
-    ///
-    fn render(&mut self, frame: &mut Frame) {
-        todo!()
-    }
-
     /// Reads the crossterm events and updates the state of [`App`].
     fn handle_crossterm_events(&mut self) -> Result<()> {
         match event::read()? {
