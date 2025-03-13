@@ -2,6 +2,8 @@ use std::{io, vec};
 
 use crossterm::event::{self, Event, KeyCode, KeyEvent, KeyEventKind, KeyModifiers};
 use ratatui::{
+    buffer::Buffer,
+    layout::Rect,
     symbols::border,
     text::{Line, Text},
     widgets::{Block, Paragraph, Widget},
@@ -69,10 +71,7 @@ impl App {
 }
 
 impl Widget for &App {
-    fn render(self, area: ratatui::prelude::Rect, buf: &mut ratatui::prelude::Buffer)
-    where
-        Self: Sized,
-    {
+    fn render(self, area: Rect, buf: &mut Buffer) {
         let title = Line::from(" CounterTui 🐭".bold());
         let instructions = Line::from(vec![
             " Decrement ".into(),
