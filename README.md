@@ -2,8 +2,7 @@
 
 # Countertui
 
-A small terminal user interface counter application built with 🦀 and ratatui.
-
+A small terminal user interface counter application built with Rust 🦀 and Ratatui.
 
 ## License
 
