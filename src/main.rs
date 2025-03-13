@@ -66,7 +66,14 @@ impl App {
             | (KeyModifiers::CONTROL, KeyCode::Char('c') | KeyCode::Char('C')) => self.quit(),
             // Add other key handlers here.
             (_, KeyCode::Left) => self.decrement_counter(),
+            (_, KeyCode::Right) => self.increment_counter(),
             _ => {}
+        }
+    }
+
+    fn increment_counter(&mut self) {
+        if self.counter < 255 {
+            self.counter += 1;
         }
     }
 
