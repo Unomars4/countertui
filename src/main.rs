@@ -1,15 +1,14 @@
 use std::vec;
 
-use color_eyre::{owo_colors::OwoColorize, Result};
+use color_eyre::Result;
 use crossterm::{
     event::{self, Event, KeyCode, KeyEvent, KeyEventKind, KeyModifiers},
     style::Stylize,
 };
 use ratatui::{
-    style::Stylize,
     symbols::border,
     text::{Line, Text},
-    widgets::{canvas::Line, Block, Paragraph, Widget},
+    widgets::{Block, Paragraph, Widget},
     DefaultTerminal, Frame,
 };
 
