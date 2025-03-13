@@ -1,16 +1,17 @@
-use std::{io, vec};
+use std::io;
 
 use crossterm::event::{self, Event, KeyCode, KeyEvent, KeyEventKind, KeyModifiers};
 use ratatui::{
     buffer::Buffer,
     layout::Rect,
+    style::Stylize,
     symbols::border,
     text::{Line, Text},
     widgets::{Block, Paragraph, Widget},
     DefaultTerminal, Frame,
 };
 
-fn main() -> color_eyre::Result<()> {
+fn main() -> io::Result<()> {
     let terminal = ratatui::init();
     let result = App::new().run(terminal);
     ratatui::restore();
