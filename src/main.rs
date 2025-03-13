@@ -19,6 +19,7 @@ fn main() -> color_eyre::Result<()> {
 #[derive(Debug, Default)]
 pub struct App {
     /// Is the application running?
+    counter: u8,
     running: bool,
 }
 
