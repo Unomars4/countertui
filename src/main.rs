@@ -65,8 +65,13 @@ impl App {
             (_, KeyCode::Esc | KeyCode::Char('q'))
             | (KeyModifiers::CONTROL, KeyCode::Char('c') | KeyCode::Char('C')) => self.quit(),
             // Add other key handlers here.
+            (_, KeyCode::Left) => self.decrement_counter(),
             _ => {}
         }
+    }
+
+    fn decrement_counter(&mut self) {
+        self.counter -= 1;
     }
 
     /// Set running to false to quit the application.
