@@ -44,16 +44,11 @@ impl App {
     ///
     /// This is where you add new widgets. See the following resources for more information:
     ///
-    /// - <https://docs.rs/ratatui/latest/ratatui/widgets/index.html>
-    /// - <https://github.com/ratatui/ratatui/tree/main/ratatui-widgets/examples>
     fn render(&mut self, frame: &mut Frame) {
         todo!()
     }
 
     /// Reads the crossterm events and updates the state of [`App`].
-    ///
-    /// If your application needs to perform work in between handling events, you can use the
-    /// [`event::poll`] function to check if there are any events available with a timeout.
     fn handle_crossterm_events(&mut self) -> Result<()> {
         match event::read()? {
             // it's important to check KeyEventKind::Press to avoid handling key release events
