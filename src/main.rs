@@ -1,4 +1,4 @@
-use std::vec;
+use std::{io, vec};
 
 use crossterm::event::{self, Event, KeyCode, KeyEvent, KeyEventKind, KeyModifiers};
 use ratatui::{
@@ -28,6 +28,16 @@ impl App {
     /// Construct a new instance of [`App`].
     pub fn new() -> Self {
         Self::default()
+    }
+
+    /// Run the application's main loop.
+    pub fn run(mut self, mut terminal: DefaultTerminal) -> io::Result<()> {
+        self.running = true;
+        while self.running {
+            terminal.draw(|frame| self.render(frame))?;
+            self.handle_crossterm_events()?;
+        }
+        Ok(())
     }
 
     /// Renders the user interface.
