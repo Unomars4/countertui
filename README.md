@@ -1,4 +1,4 @@
-![alt text](https://github.com/Unomars4/countertui/assets/countertui.jpg?raw=true)
+![alt text](https://github.com/Unomars4/countertui/blob/main/assets/countertui.png?raw=true)
 
 # Countertui
 
